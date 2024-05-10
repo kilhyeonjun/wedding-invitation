@@ -6,7 +6,7 @@ import type { ISNS } from "../../../types/interface";
 
 const SNS = ({ title, description, img }: ISNS) => {
   useEffect(() => {
-    // window.Kakao.init(process.env.NEXT_PUBLIC_KAKAOMAP_KEY);
+    window.Kakao.init(process.env.NEXT_PUBLIC_KAKAOMAP_KEY);
   }, []);
   const kakaoTalkShare = () => {
     const { Kakao, location } = window;
@@ -30,6 +30,7 @@ const SNS = ({ title, description, img }: ISNS) => {
           },
         },
       ],
+      installTalk: true,
     });
   };
   return (
