@@ -1,13 +1,13 @@
-import { useEffect } from "react"
-import CardLayout from "../CardLayout"
-import KakaoTalkIcon from './KakaoTalkIcon'
-import {ShareButton} from './style'
-import type { ISNS } from "../../../types/interface"
+import { useEffect } from "react";
+import CardLayout from "../CardLayout";
+import KakaoTalkIcon from "./KakaoTalkIcon";
+import { ShareButton } from "./style";
+import type { ISNS } from "../../../types/interface";
 
-const SNS = ({title, description, img} : ISNS) => {
+const SNS = ({ title, description, img }: ISNS) => {
   useEffect(() => {
-    window.Kakao.init(process.env.NEXT_PUBLIC_KAKAOMAP_KEY);
-}, []);
+    // window.Kakao.init(process.env.NEXT_PUBLIC_KAKAOMAP_KEY);
+  }, []);
   const kakaoTalkShare = () => {
     const { Kakao, location } = window;
     Kakao.Link.sendDefault({
@@ -35,13 +35,11 @@ const SNS = ({title, description, img} : ISNS) => {
   return (
     <CardLayout>
       <ShareButton onClick={kakaoTalkShare}>
-        <KakaoTalkIcon/>
+        <KakaoTalkIcon />
         <div>카카오톡 공유하기</div>
-        </ShareButton>
+      </ShareButton>
     </CardLayout>
-  )
-}
+  );
+};
 
-
-
-export default SNS
+export default SNS;
